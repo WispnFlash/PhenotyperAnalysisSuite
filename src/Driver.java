@@ -27,7 +27,7 @@ public class Driver extends Application {
     private String inputdirectory = "C:/Inputs/";
     private String maindirectorychoice = "G:/Behavioral Data/";
     private String maindirectory = maindirectorychoice + "Sonntag Lab Dropbox/Phenotyper/Investigators/";
-    private String Rscriptdirectory = "C:/Users/Public/Documents/Rscripts/";
+    private String Rscriptdirectory = "C:/Users/Public/Documents/PyScripts/";
     private String mouseimagelocation = "C:/Users/DOWEN1/Pictures/mouse.jpg";
     private String directorychooser = maindirectory;
     private File file1 = new File(Rscriptdirectory + "TextToRDAfileconverter.r");
