@@ -2959,9 +2959,8 @@ public class Driver extends Application {
                         grid.add(groupchoice, 1, placement, 10, 1);
                         placement = placement + 1;
                         Treatment newtreatment = new Treatment(treatment, size, maindirectory, lastname, Rscriptdirectory);
-                        newtreatment.createTreatmentforIDETC(maindirectory, lastname, Rscriptdirectory);
                         try {
-                            Process compileIDETCTreatment = Runtime.getRuntime().exec("Rscript " + Rscriptdirectory + "CohortGrapher.r");
+                            Process compileIDETCTreatment = Runtime.getRuntime().exec("python " + Rscriptdirectory + "createtreatment.py " + lastname + " " + treatment + " 3");
                             compileIDETCTreatment.waitFor();
                             file6.delete();
                         } catch(IOException zxc) {
@@ -3050,9 +3049,9 @@ public class Driver extends Application {
                         grid.add(groupchoice, 1, placement, 10, 1);
                         placement = placement + 1;
                         Treatment newtreatment = new Treatment(treatment, size, maindirectory, lastname, Rscriptdirectory);
-                        newtreatment.createTreatmentforRevETC(maindirectory, lastname, Rscriptdirectory);
+
                         try {
-                            Process compileRevETCTreatment = Runtime.getRuntime().exec("Rscript " + Rscriptdirectory + "CohortGrapher.r");
+                            Process compileRevETCTreatment = Runtime.getRuntime().exec("python " + Rscriptdirectory + "createtreatment.py " + lastname + " " + treatment + " 4");
                             compileRevETCTreatment.waitFor();
                             file6.delete();
                         } catch(IOException zxc) {
@@ -3133,7 +3132,7 @@ public class Driver extends Application {
                             System.out.println("Error");
                         }
                         directorychooser = maindirectory + lastname + "/Treatments";
-                        File directory1 = new File(maindirectory + lastname + "/Spreadsheets/Individual mice/Indexes/Cumulative/" + treatment);
+                        File directory1 = new File(maindirectory + lastname + "/Data/Indexes/Cumulative/" + treatment);
                         int size = 0;
                         size = directory1.list().length;
                         System.out.println(treatment + " " + lastname + " " + size);
@@ -3226,7 +3225,7 @@ public class Driver extends Application {
                             System.out.println("Error");
                         }
                         directorychooser = maindirectory + lastname + "/Treatments";
-                        File directory1 = new File(maindirectory + lastname + "/Spreadsheets/Individual mice/Indexes/Cumulative/" + treatment);
+                        File directory1 = new File(maindirectory + lastname + "/Data/Indexes/Cumulative/" + treatment);
                         int size = 0;
                         size = directory1.list().length;
                         System.out.println(treatment + " " + lastname + " " + size);
@@ -3327,7 +3326,7 @@ public class Driver extends Application {
                             System.out.println("Error");
                         }
                         directorychooser = maindirectory + lastname + "/Treatments";
-                        File directory1 = new File(maindirectory + lastname + "/Data/Distance moved/" + treatment);
+                        File directory1 = new File(maindirectory + lastname + "/Data/Indexes/Cumulative/" + treatment);
                         int size = 0;
                         size = directory1.list().length;
 
@@ -3724,7 +3723,7 @@ public class Driver extends Application {
                             System.out.println("Error");
                         }
                         directorychooser = maindirectory + lastname + "/Treatments";
-                        File directory1 = new File(maindirectory + lastname + "/Data/Distance moved/" + treatment);
+                        File directory1 = new File(maindirectory + lastname + "/Data/Indexes/Independent/" + treatment);
                         int size = 0;
                         size = directory1.list().length;
                         System.out.println(treatment + " " + lastname + " " + size);
@@ -4112,7 +4111,7 @@ public class Driver extends Application {
                             System.out.println("Error");
                         }
                         directorychooser = maindirectory + lastname + "/Treatments";
-                        File directory1 = new File(maindirectory + lastname + "/Spreadsheets/Individual mice/Indexes/Independent/" + treatment);
+                        File directory1 = new File(maindirectory + lastname + "/Data/Indexes/Independent/" + treatment);
                         int size = 0;
                         size = directory1.list().length;
                         System.out.println(treatment + " " + lastname + " " + size);
@@ -4205,7 +4204,7 @@ public class Driver extends Application {
                             System.out.println("Error");
                         }
                         directorychooser = maindirectory + lastname + "/Treatments";
-                        File directory1 = new File(maindirectory + lastname + "/Spreadsheets/Individual mice/Indexes/Independent/" + treatment);
+                        File directory1 = new File(maindirectory + lastname + "/Data/Indexes/Independent/" + treatment);
                         int size = 0;
                         size = directory1.list().length;
                         System.out.println(treatment + " " + lastname + " " + size);
